@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Bruno+Ace&family=Bruno+Ace+SC&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Russo+One&display=swap');
+
+
+:root {
+    --accent-color: #0d94dd;
+    --text-hover-color: #0d94dd50;
+}
+
+canvas {
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+#bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.primary-head-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+#phead-sub-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    max-height: min-content;
+}
+
+.title {
+    font-size: 128px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-padding {
+    height: 0;
+    margin-top: 180px;
+}
+
+.info-padding-2 {
+    height: 0;
+    margin-top: 280px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    max-height: 14rem;
+    opacity: auto;
+}
+
+.logo-icon {
+    width: 10rem;
+    height: 10rem;
+    filter: drop-shadow(0 0 1px var(--accent-color))
+        drop-shadow(0 0 1px var(--accent-color))
+        drop-shadow(0 0 10px var(--accent-color));
+
+}
+
+.logo-text {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 8rem;
+    font-weight: 400;
+    color: black;
+    -webkit-text-stroke: 2px var(--accent-color);
+    text-shadow:
+        0 0 8px var(--accent-color),
+        0 0 16px var(--accent-color),
+        0 0 32px var(--accent-color);
+}
+
+.contents-hbox {
+    font-family: 'Audiowide', sans-serif;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 0 0 7px black;
+    margin-bottom: 3rem;
+}
+
+
+.contents-hbox li {
+    position: relative;
+}
+
+.contents-hbox li:not(:last-child)::after {
+    content: "—";
+    margin-left: 0.5em;
+    color: #ffffff50;
+}
+
+.contents-hbox a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Animate color and glow */
+}
+
+.contents-hbox a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-shadow: 
+    0 0 5px var(--text-hover-color),
+    0 0 10px var(--text-hover-color),
+    0 0 10px var(--text-hover-color); /* Glow effect */
+}
+
+.socials-hbox {
+    font-family: 'Inter';
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-shadow: 0 0 7px black;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.socials-hbox li:not(:last-child)::after {
+    content: "—";
+    margin-left: 0.5em;
+    color: #ffffff50;
+}
+
+.down-arrow {
+    rotate: 90deg;
+    width: 1.4rem;
+    height: 1.4rem;
+    filter: invert(1);
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+
+.category-header {
+    font-family: 'Audiowide';
+}
+
+.team-info-container {
+    display: flex;
+    width: 80vw;
+}
+
+.team-member-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.person-name {
+    margin: 0;
+}
+
+.person-info {
+    margin: 0;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    max-width: 50%;
+    height: min-content;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+a {
+    color: white;
+}
+
+.footer {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    color: gray;
+    font-size: 0.7rem;
+}
+
+h3 {
+    font-weight: 300;
+}
+
+.info {
+    color: white;
+    max-width: 50%;
+    height: min-content;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
