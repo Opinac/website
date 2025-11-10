@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Bruno+Ace&family=Bruno+Ace+SC&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Russo+One&display=swap');
 
-
 :root {
     --accent-color: #0d94dd;
     --text-hover-color: #0d94dd50;
-}
-
-canvas {
-    z-index: -1;
 }
 
 body {
@@ -17,6 +12,10 @@ body {
     width: 100%;
     height: 100%;
     color: white;
+}
+
+canvas {
+    z-index: -1;
 }
 
 #bg-grid {
@@ -46,34 +45,6 @@ body {
     flex-direction: column;
 }
 
-h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    color: white;
-    max-height: min-content;
-}
-
-.title {
-    font-size: 128px;
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.info-padding {
-    height: 0;
-    margin-top: 180px;
-}
-
-.info-padding-2 {
-    height: 0;
-    margin-top: 280px;
-}
-
 .logo-container {
     display: flex;
     align-items: center;
@@ -84,17 +55,16 @@ h1 {
 }
 
 .logo-icon {
-    width: 10rem;
-    height: 10rem;
+    width: clamp(5rem, 20vw, 10rem);
+    height: auto;
     filter: drop-shadow(0 0 1px var(--accent-color))
         drop-shadow(0 0 1px var(--accent-color))
         drop-shadow(0 0 10px var(--accent-color));
-
 }
 
 .logo-text {
     font-family: 'Audiowide', sans-serif;
-    font-size: 8rem;
+    font-size: clamp(2rem, 10vw, 8rem);
     font-weight: 400;
     color: black;
     -webkit-text-stroke: 2px var(--accent-color);
@@ -111,12 +81,11 @@ h1 {
     margin: 0;
     display: flex;
     gap: 0.5em;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: 500;
     text-shadow: 0 0 7px black;
     margin-bottom: 3rem;
 }
-
 
 .contents-hbox li {
     position: relative;
@@ -131,16 +100,82 @@ h1 {
 .contents-hbox a {
     text-decoration: none;
     color: white;
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Animate color and glow */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .contents-hbox a:hover {
     color: var(--accent-color);
     text-decoration: underline;
-    text-shadow: 
-    0 0 5px var(--text-hover-color),
-    0 0 10px var(--text-hover-color),
-    0 0 10px var(--text-hover-color); /* Glow effect */
+    text-shadow:
+        0 0 5px var(--text-hover-color),
+        0 0 10px var(--text-hover-color),
+        0 0 10px var(--text-hover-color);
+}
+
+.down-arrow {
+    rotate: 90deg;
+    width: 1.4rem;
+    height: 1.4rem;
+    filter: invert(1);
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-header {
+    font-family: 'Audiowide';
+}
+
+.info {
+    color: white;
+    max-width: 50%;
+    height: min-content;
+}
+
+.info-padding {
+    height: 0;
+    margin-top: 180px;
+}
+
+.info-padding-2 {
+    height: 0;
+    margin-top: 280px;
+}
+
+.team-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+}
+
+.team-member-container {
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-bottom: 80px;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    min-width: 10rem;
+}
+
+.person-name {
+    margin: 0;
+}
+
+.person-info {
+    margin: 0;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .socials-hbox {
@@ -163,45 +198,22 @@ h1 {
     color: #ffffff50;
 }
 
-.down-arrow {
-    rotate: 90deg;
-    width: 1.4rem;
-    height: 1.4rem;
-    filter: invert(1);
-    margin: 0 auto;
-    display: block;
-    cursor: pointer;
-}
-
-
-.category-header {
-    font-family: 'Audiowide';
-}
-
-.team-info-container {
+.footer {
+    margin-left: 20px;
+    margin-right: 20px;
     display: flex;
-    width: 80vw;
-}
-
-.team-member-container {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-}
-
-.person-name {
-    margin: 0;
-}
-
-.person-info {
-    margin: 0;
-    text-align: center;
+    justify-content: space-between;
     font-family: 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 1rem;
-    margin-bottom: 20px;
+    color: gray;
+    font-size: 0.7rem;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    max-height: min-content;
 }
 
 h2 {
@@ -211,6 +223,10 @@ h2 {
     color: white;
     max-width: 50%;
     height: min-content;
+}
+
+h3 {
+    font-weight: 300;
 }
 
 p {
@@ -223,24 +239,8 @@ a {
     color: white;
 }
 
-.footer {
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Inter', sans-serif;
-    color: gray;
-    font-size: 0.7rem;
-}
-
-h3 {
-    font-weight: 300;
-}
-
-.info {
-    color: white;
-    max-width: 50%;
-    height: min-content;
+.title {
+    font-size: 128px;
 }
 
 @keyframes fadeInUp {
